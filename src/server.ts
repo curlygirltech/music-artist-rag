@@ -3,7 +3,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { chatWithContext } from './chat.js';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer(async (req, res) => {
   // Serve the HTML page
