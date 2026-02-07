@@ -178,7 +178,7 @@ export async function storeArtistData(collectionName: string = 'music-artists') 
 // Add a single artist to the existing collection (for on-demand scraping)
 export async function addSingleArtist(artistData: ArtistData): Promise<number> {
   try {
-    console.log(`📥 Adding ${artistData.name} to knowledge base...`);
+    console.log(`📥 Adding ${artistData.name}...`);
 
     // Step 1: Get current max point ID from collection
     const collectionInfo = await qdrant.getCollection(COLLECTION_NAME);

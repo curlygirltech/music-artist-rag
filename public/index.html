@@ -119,7 +119,7 @@
 <body>
   <header>
     <h1>Music Artist RAG</h1>
-    <p>Ask questions about music artists and get AI-powered answers based on curated artist information from the knowledge base.</p>
+    <p>Ask questions about music artists and get AI-powered answers.</p>
   </header>
   <div id="messages"></div>
   <form id="chat-form">
@@ -160,11 +160,7 @@
         const data = await res.json();
         loadingDiv.classList.remove('loading');
 
-        if (data.isNewArtist) {
-          loadingDiv.textContent = `✨ Added new artist to knowledge base!\n\n${data.response}`;
-        } else {
-          loadingDiv.textContent = data.response || data.error || 'Error occurred';
-        }
+        loadingDiv.textContent = data.response || data.error || 'Error occurred';
       } catch (err) {
         loadingDiv.textContent = 'Failed to connect to server';
         loadingDiv.classList.remove('loading');
